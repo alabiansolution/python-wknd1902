@@ -7,7 +7,7 @@ class Bicycle():
         detail = ', The color of the Bicycle is {} with {} wheels and {} sit. '.format(self.color, self.wheels, self.sits)
         return detail
 
-    def __int__(self, kg, lbs):
+    def weight(self, kg, lbs):
         self.kg = kg
         self.__lbs = lbs
 
