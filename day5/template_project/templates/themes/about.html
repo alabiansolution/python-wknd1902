@@ -1,0 +1,16 @@
+{% extends 'themes/base.html' %}
+{% load staticfiles %}
+{% block title%}
+
+<title>{{ title }}</title>
+
+{% endblock %}
+
+{% block content %}
+
+<p>{{ title }}</p>
+<p>{{ content }}</p>
+
+<img src="{% static 'Images/item3.jpg'%}" alt="">
+
+{% endblock %}

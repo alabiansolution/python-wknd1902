@@ -1,0 +1,16 @@
+{% extends 'themes/base.html' %}
+{% load staticfiles %}
+{% block title%}
+
+<title>{{ home_key}}</title>
+
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ home_key }}</h1>
+
+
+<img src="{% static 'Images/bg.jpg'%}" alt="">
+
+{% endblock %}
