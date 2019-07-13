@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+      <h1>Welcome</h1>
+
+      <a href="{% url 'index' %}">Home</a>
+      <a href="{% url 'users' %}">Users</a>
+      <a href="{% url 'basic_form' %}">Basic</a>
+      <a href="{% url 'form_page' %}">Forms</a>
+
+
+      {% if mypost %}
+        {% for mykey in mypost %}
+        <div class="article">
+          <h2><a href="/detail_page/{{ mykey.id}}">{{ mykey.post_title }}</a></h2>
+          <p>{{ mykey.created_at }}</p>
+          <div class="post-img">
+            <img src="{{ mykey.post_img.url }}" alt="">
+          </div>
+          <p>{{ mykey.post_content |safe|truncatewords:"20" }}</p>
+          <a href="/detail_page/{{ mykey.id}}">Readmore</a>
+        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+
+</body>
+</html>

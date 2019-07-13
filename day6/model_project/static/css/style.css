@@ -1,0 +1,58 @@
+body{
+  background-color: #ddd;
+}
+
+h1{
+  text-align: center;
+}
+
+h1, h2{
+  color:red;
+  font-family: arial, sans-serif;
+}
+
+a{
+  color:red;
+  text-decoration: none;
+}
+
+#wrapper{
+  background-color: #fff;
+  width: 80%;
+  margin: auto;
+}
+
+#formPage{
+  display:flex;
+}
+
+.form-style{
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border:2px solid #ddd;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+
+.article{
+  width: 70%;
+  margin: auto;
+}
+
+#detail{
+  width: 55%;
+}
+
+.post-img {
+  width: 400px;
+  height: 400px;
+}
+
+.post-img > img{
+  width: 100%;
+  height: auto;
+}

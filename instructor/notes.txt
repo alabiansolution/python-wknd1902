@@ -1,0 +1,62 @@
+url imports
+from django.conf import settings
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+CheckboxSelectMultiple
+RadioSelect
+Select
+
+r'^(?P<pk>\d+)/$'
+url(r'^detail_page/(?P<post_id>[0-9]+)/$', views.detail, name='detail'),
+
+django.views.generic import View, TemplateView
+
+from django.utils import timezone
+from django.core.urlresolvers import reverse
+
+create_date = models.DateTimeField(default=timezone.now())
+published_date = models.DateTimeField(blank=True, null=True)
+
+send_mail(subject, message, from_email, to_list, fail_silently=True)
+
+django.contrib import messages
+message.success(request, 'successful message')
+
+context_object_name
+<a href="{% url 'learn_app:update' pk=detail.pk %}">Update</a>
+from django.core.urlresolvers import reverse
+def get_abolute_url(self):
+        
+    return reverse('formapp:detail', kwargs={'pk':self.pk})
+
+{% if not form.instance.pk %}
+
+
+https://docs.djangoproject.com/en/2.2/topics/forms/
+
+
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>
+	<div class="alert alert-success>{{ message }}</div>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+https://simpleisbetterthancomplex.com/tutorial/2016/06/13/how-to-send-email.html
+https://stackoverflow.com/questions/53458281/django-orm-retrieve-10-items-for-each-category
+https://stackoverflow.com/questions/36569457/django-get-data-from-multiple-tables
+https://books.agiliq.com/projects/django-orm-cookbook/en/latest/many_to_many.html
+https://fosstack.com/how-to-set-up-tinymce-in-django-app/ 
+https://simpleisbetterthancomplex.com/tutorial/2019/01/02/how-to-implement-grouped-model-choice-field.html
+https://pypi.org/project/django-fontawesome/
+
+url(r'^detail_page/(?P<post_id>[0-9]+)/$', views.detail, name='detail'),
+
+|safe|truncatewords:"20"

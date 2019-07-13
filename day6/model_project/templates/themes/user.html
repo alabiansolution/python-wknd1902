@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ User }}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+      <h1>Welcome</h1>
+      <a href="{% url 'index' %}">Home</a>
+      <a href="{% url 'users' %}">Users</a>
+      <a href="{% url 'basic_form' %}">Basic</a>
+      <a href="{% url 'form_page' %}">Forms</a>
+
+      {% if users %}
+        <div class="article" id="detail">
+              <table width='650' border='1'>
+                <tr>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                </tr>
+                {% for key in users %}
+                <tr>
+                  <td>{{ key.username }}</td>
+                  <td>{{ key.email }}</td>
+                  <td>{{ key.first_name }}</td>
+                  <td>{{ key.last_name }}</td>
+                </tr>
+                {% endfor %}
+              </table>
+        </div>
+      {% endif %}
+    </div>
+
+
+</body>
+</html>

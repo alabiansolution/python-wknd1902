@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ detail.post_title }}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+      <h1>Welcome</h1>
+
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'users' %}">Users</a>
+        <a href="{% url 'basic_form' %}">Basic</a>
+        <a href="{% url 'form_page' %}">Forms</a>
+
+        <div class="article" id="formPage">
+          <div class="forms">
+            <form method="POST">
+              <table>
+                {{ my_form1.as_table }}
+                {% csrf_token %}
+              </table>
+
+              <input type="submit" value="Send">
+            </form>
+          </div>
+          <div class="forms">
+            <form method="POST">
+              <table>
+                {{ my_form2.as_ul }}
+                {% csrf_token %}
+              </table>
+
+              <input type="submit" value="Send">
+            </form>
+          </div>
+          <div class="forms">
+            <form method="POST">
+              <table>
+                {{ my_form3.as_ul }}
+                {% csrf_token %}
+              </table>
+
+              <input type="submit" value="Send">
+            </form>
+          </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
