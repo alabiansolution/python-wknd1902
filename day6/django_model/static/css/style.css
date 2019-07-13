@@ -1,0 +1,34 @@
+body{
+  background-color: #ddd;
+}
+
+h1{
+  text-align: center;
+}
+
+h1,h2{
+  color: red;
+  font-family: arial, sans-serif;
+}
+
+#wrapper{
+  background-color: #fff;
+  width: 80%;
+  margin: auto;
+}
+
+.article {
+  width: 70%;
+  margin: auto;
+}
+
+
+.post-img {
+  width: 400px;
+  height: 400px;
+}
+
+.post-img > img {
+  width: auto;
+  min-height: 400px;
+}

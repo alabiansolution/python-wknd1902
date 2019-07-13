@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ detail.post_title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  </head>
+  <body>
+
+    <div id="wrapper">
+
+      <h1>Welcome</h1>
+
+      {% if detail %}
+
+        <div class="article" id="detail">
+          <h2>{{ detail.post_title }}</h2>
+          <p>{{ detail.created_at }}</p>
+          <div class="post_img">
+            <img src="{{ detail.post_img.url }}" alt="">
+          </div>
+          <p>{{ detail.post_content }}</p>
+        </div>
+      {% endif %}
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ detail.post_title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  </head>
+  <body>
+
+    <div id="wrapper">
+
+      <h1>Welcome</h1>
+
+      <a href="{%url 'index'%}">Home</a>
+      <a href="{%url 'users'%}">Users</a>
+
+      {% if user %}
+
+        <div class="article" id="detail">
+          <table width='650' border="1">
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+            </tr>
+            {% for key in users %}
+            <tr>
+              <td>{{key.username}}</td>
+              <td>{{key.email}}</td>
+              <td>{{key.first_name}}</td>
+              <td>{{key.last_name}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+
+        </div>
+
+      {% endif %}
+    </div>
+
+  </body>
+</html>
