@@ -13,7 +13,30 @@ Select
 r'^(?P<pk>\d+)/$'
 url(r'^detail_page/(?P<post_id>[0-9]+)/$', views.detail, name='detail'),
 
-django.views.generic import View, TemplateView
+from django.http import HttpResponseRedirect
+from django.views.generic import View, TemplateView
+from django.contrib.auth.views import login, logout
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
+
+instance=request.user
+PasswordChangeForm(data= request.POST, user=request.user)
+update_session_auth_hash(request, form.user) (below passwordd save)
+form = PasswordChangeForm(user=request.user) (password else part)
+args = {'user' : request.user} (for viewprofile)
+
+def save(self, commit=True):
+             user = super(RegisterForm, self).save(commit=False)
+             user.username = cleaned_data['username']
+             user.first_name = cleaned_data['first_name']
+             user.last_name = cleaned_data['last_name']
+             user.email = cleaned_data['email']
+
+             if commit:
+            	 user.save()
 
 from django.utils import timezone
 from django.core.urlresolvers import reverse
@@ -29,7 +52,7 @@ message.success(request, 'successful message')
 context_object_name
 <a href="{% url 'learn_app:update' pk=detail.pk %}">Update</a>
 from django.core.urlresolvers import reverse
-def get_abolute_url(self):
+def get_absolute_url(self):
         
     return reverse('formapp:detail', kwargs={'pk':self.pk})
 
@@ -60,3 +83,5 @@ https://pypi.org/project/django-fontawesome/
 url(r'^detail_page/(?P<post_id>[0-9]+)/$', views.detail, name='detail'),
 
 |safe|truncatewords:"20"
+
+Benedcit

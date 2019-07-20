@@ -40,8 +40,8 @@ def form_page(request):
             email = form3.cleaned_data['email']
             message = form3.cleaned_data['message']
             form3.save(commit=True)
-        else:
-            form3 = ContactForm()
+    else:
+        form3 = ContactForm()
 
     args = {
         'my_form1' : form1,

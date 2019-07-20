@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'backend/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+<title>{{ user.first_name }} | {{ user.last_name }}</title>
+{% endblock %}
+
+{% block section %}
+<section>
+    <form method="POST">
+      {{ edit.as_p }}
+      {% csrf_token %}
+      <input type="submit" value="Edit Profile">
+    </form>
+
+</section>
+{% endblock %}

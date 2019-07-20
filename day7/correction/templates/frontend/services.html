@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'frontend/base2.html' %}
+{% load staticfiles %}
+{% block title %}
+<title>About</title>
+{% endblock %}
+
+{% block page_title %}
+<section id="sectionTitle">
+  <div class="pageTitle">
+    <h1>About Us</h1>
+  </div>
+</section>
+<!-- END OF PAGE TITLE -->
+{% endblock%}
+
+{% block content %}
+<div class="col-sm-9 text-center" id="mainContent">
+  <div class="row">
+    {% if service_key %}
+    {% for srv in service_key %}
+      <div class="col-sm-4">
+      {% if srv.icon %}
+        {{ srv.icon.as_html }}
+       {% endif %}
+      <h1>{{ srv.service_title }}</h1>
+      <p>
+        {{ srv.service_desc | safe }}
+      </p>
+      <a href="/service_page/{{ srv.id }}" class="btn btn-primary">Readmore</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No Data showing</p>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

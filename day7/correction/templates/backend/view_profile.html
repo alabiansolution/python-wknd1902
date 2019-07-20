@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'backend/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+<title>{{ user.first_name }} | {{ user.last_name }}</title>
+{% endblock %}
+
+{% block section %}
+<section>
+  {% if user %}
+  <p>Username: {{ user.username }}</p>
+  <p>Firstname: {{ user.first_name }}</p>
+  <p>Lastname: {{ user.last_name }}</p>
+  <p>Email: {{ user.email }}</p>
+  {% endif %}
+
+</section>
+{% endblock %}

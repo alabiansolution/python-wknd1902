@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'frontend/base2.html' %}
+{% load staticfiles %}
+{% block title %}
+<title>{{ detail_key.title }}</title>
+{% endblock %}
+
+{% block page_title %}
+<section id="sectionTitle">
+  <div class="pageTitle">
+    <h1>Login</h1>
+  </div>
+</section>
+<!-- END OF PAGE TITLE -->
+{% endblock%}
+
+{% block content %}
+<div class="col-sm-9 text-center" id="detailContent">
+   <form method="POST">
+     {{ form.as_p }}
+     {% csrf_token %}
+     <input type="submit" value="Login">
+   </form>
+</div>
+{% endblock %}
